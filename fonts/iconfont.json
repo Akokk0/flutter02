@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10932439",
+      "name": "bilibili-fill",
+      "font_class": "bilibili-fill",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "11132209",
+      "name": "alipay",
+      "font_class": "alipay",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "15378363",
+      "name": "flutter",
+      "font_class": "flutter",
+      "unicode": "eb95",
+      "unicode_decimal": 60309
+    },
+    {
+      "icon_id": "27365294",
+      "name": "steam",
+      "font_class": "steam",
+      "unicode": "ec22",
+      "unicode_decimal": 60450
+    }
+  ]
+}
