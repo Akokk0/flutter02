@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter02/pages/tabs.dart';
+import '/pages/tabs.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+// Tabs底部导航栏组件切换
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -12,10 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.deepOrange
       ),
-      home: const Tabs(),
+      home: const Center(
+        child: Tabs(),
+      ),
     );
   }
 }
-
