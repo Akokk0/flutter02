@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './iconFont.dart';
+import '../iconFont.dart';
 
 void main() {
   runApp(const MyApp());

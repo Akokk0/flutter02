@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter02/pages/tabs/flutter.dart';
-import '/iconFont.dart';
+import '../iconFont.dart';
 import './tabs/home.dart';
 import './tabs/category.dart';
-import './tabs/settings.dart';
+import 'tabs/settings.dart';
 import './tabs/bilibili.dart';
 
 // 底部凸起按钮

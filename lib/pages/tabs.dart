@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter02/pages/tabs/flutter.dart';
-import '/iconFont.dart';
-import './tabs/home.dart';
-import './tabs/category.dart';
-import './tabs/settings.dart';
-import './tabs/bilibili.dart';
+import 'package:flutter02/pages/applePage.dart';
+import 'package:flutter02/pages/bilibiliPage.dart';
+import 'package:flutter02/pages/flutterPage.dart';
+import 'package:flutter02/pages/steamPage.dart';
+import 'package:flutter02/pages/tiktokPage.dart';
+import 'package:flutter02/res/iconFont.dart';
 
-// 底部凸起按钮
-class Tabs extends StatefulWidget {
-  const Tabs({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
-  State<Tabs> createState() => _TabsState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _TabsState extends State<Tabs> {
+class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
-  final List<Widget> _pages = const [
-    HomePage(),
-    CategoryPage(),
-    SettingsPage(),
+  final List<Widget> _pageList = const [
+    ApplePage(),
+    TikTokPage(),
+    SteamPage(),
     BilibiliPage(),
-    FlutterPage()
+    FlutterPage(),
   ];
 
   @override
@@ -31,48 +30,19 @@ class _TabsState extends State<Tabs> {
         preferredSize: const Size.fromHeight(44),
         child: AppBar(
           elevation: 0,
-          title: const Text("Flutter TabBar"),
+          title: const Text("Flutter Router"),
         ),
       ),
-      body: _pages[_currentIndex],
-      drawer: Drawer(
-        child: Column(
-          children: const [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage("images/IMG_4970.JPG"),
-                // backgroundImage: AssetImage("images/lunlun.png"),
-              ),
-              accountName: Text("Akokko"),
-              accountEmail: Text("admin@akokko.com"),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("images/lunlun.png"),
-                  fit: BoxFit.cover
-                )
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text("个人"),
-            ),
-            ListTile(
-              leading: Icon(Icons.category),
-              title: Text("分类"),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("设置"),
-            ),
-          ],
-        ),
-      ),
+      body: _pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar( // 底部导航栏
-        currentIndex: _currentIndex, // 当前选中页面
+        currentIndex: _currentIndex,
+        // 当前选中页面
         // fixedColor: Colors.blue, // 选中颜色
-        iconSize: 30, // 底部菜单大小
-        type: BottomNavigationBarType.fixed, // 配置四个或四个以上菜单项
-        onTap: (index){
+        iconSize: 30,
+        // 底部菜单大小
+        type: BottomNavigationBarType.fixed,
+        // 配置四个或四个以上菜单项
+        onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
@@ -100,25 +70,6 @@ class _TabsState extends State<Tabs> {
           ),
         ],
       ),
-      floatingActionButton: Container(
-        height: 60,
-        width: 60,
-        margin: const EdgeInsets.only(top: 17),
-        padding: const EdgeInsets.all(6),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30)
-        ),
-        child: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              _currentIndex = 2;
-            });
-          },
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, // 可以配置浮动按钮的位置
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import './res/listData.dart' show listData;
+import '../res/listData.dart' show listData;
 
 void main() {
   runApp(const MyApp());

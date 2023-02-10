@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter02/pages/form.dart';
+import 'package:flutter02/pages/news.dart';
+import 'package:flutter02/pages/search.dart';
 import 'package:flutter02/tools/keepAliveWrapper.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,73 +74,50 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         controller: _tabController,
         children: [
           KeepAliveWrapper(
-            child: ListView(
-              children: const [
-                ListTile(
-                  title: Text("I am a ListTile for follower111"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower333"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower"),
-                ),
-                ListTile(
-                  title: Text("I am a ListTile for follower222"),
-                ),
-              ],
-            ),
+            child: Center(
+              child: ElevatedButton(
+                child: const Text("Search"),
+                onPressed: () {
+                  // 跳转路由
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return const SearchPage();
+                      })
+                  );
+                },
+              ),
+            )
           ),
-          ListView(
-            children: const [
-              ListTile(
-                title: Text("I am a ListTile for hot"),
+          KeepAliveWrapper(
+              child: Center(
+                child: ElevatedButton(
+                  child: const Text("Hot"),
+                  onPressed: () {
+                    // 跳转路由
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const FormPage();
+                        })
+                    );
+                  },
+                ),
               )
-            ],
           ),
-          ListView(
-            children: const [
-              ListTile(
-                title: Text("I am a ListTile for video"),
+          KeepAliveWrapper(
+              child: Center(
+                child: ElevatedButton(
+                  child: const Text("News"),
+                  onPressed: () {
+                    // 跳转路由
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const NewsPage(aid: 12, title: "What If",);
+                        })
+                    );
+                  },
+                ),
               )
-            ],
-          )
+          ),
         ],
       ),
     );

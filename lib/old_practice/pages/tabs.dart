@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter02/pages/tabs/flutter.dart';
-import '/iconFont.dart';
+import '../iconFont.dart';
 import './tabs/home.dart';
 import './tabs/category.dart';
-import './tabs/settings.dart';
+import 'tabs/settings.dart';
 import './tabs/bilibili.dart';
 
 // 底部凸起按钮
@@ -27,8 +27,12 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Flutter BottomNavigationBar"),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(44),
+        child: AppBar(
+          elevation: 0,
+          title: const Text("Flutter TabBar"),
+        ),
       ),
       body: _pages[_currentIndex],
       drawer: Drawer(
@@ -43,7 +47,8 @@ class _TabsState extends State<Tabs> {
               accountEmail: Text("admin@akokko.com"),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("images/IMG_4970.JPG")
+                  image: AssetImage("images/lunlun.png"),
+                  fit: BoxFit.cover
                 )
               ),
             ),

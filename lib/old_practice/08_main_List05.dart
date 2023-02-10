@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './res/listData.dart' show listData;
+import '../res/listData.dart' show listData;
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
     /* return ListView(
       children: initListData(),
     ); */
-    
+
     // 使用builder生成动态列表
     return ListView.builder(
       itemCount: listData.length,
