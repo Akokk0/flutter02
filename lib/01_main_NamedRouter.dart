@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter02/router/router.dart';
+import 'package:flutter02/pages/router/form.dart';
+import 'package:flutter02/pages/router/news.dart';
+import 'package:flutter02/pages/router/search.dart';
+import 'package:flutter02/pages/tabs.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // 1、定义路由
+  final Map routes = {
+    "/": (context) => const MyHomePage(),
+    "/news": (context) => const NewsPage(),
+    "/search": (context) => const SearchPage(),
+    "/form": (context, {arguments}) => FormPage(arguments: arguments,)
+  };
 
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +45,7 @@ class MyApp extends StatelessWidget {
         }
         return null;
       },*/
-      /*onGenerateRoute: (RouteSettings settings) {
+      onGenerateRoute: (RouteSettings settings) {
         final String? name = settings.name;
         final pageContentBuilder = routes[name];
 
@@ -53,9 +63,7 @@ class MyApp extends StatelessWidget {
           }
         }
         return null;
-      },*/
-
-      onGenerateRoute: onGenerateRoute,
+      },
     );
   }
 }

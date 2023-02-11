@@ -63,6 +63,15 @@ class _ApplePageState extends State<ApplePage> with SingleTickerProviderStateMix
                   Navigator.pushNamed(context, "/news");
                 },
                 child: const Text("命名路由跳转---SearchPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/form", arguments: {
+                    "title": "我是命名路由传值",
+                    "aid": 20
+                  });
+                },
+                child: const Text("命名路由传值---FormPage"),
               )
             ],
           ),
